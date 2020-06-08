@@ -1,6 +1,9 @@
 # FloatingDockBarJS
 일정 구간 이상으로 스크롤 할 시 고정시켜줍니다.
 
+## Demo
+<img width="616" alt="demo" src="https://user-images.githubusercontent.com/11539551/83985493-6be9b400-a974-11ea-817a-14ecd614b6b2.gif">
+
 ## Dependencies
 1. jQuery.js
 2. jQuery.throttle.js 
