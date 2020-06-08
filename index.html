@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="./floatingDockBar.js"></script>
+    <style>
+        body {margin: 0;}
+        .main-container {
+            width: 1280px;
+            margin: 0 auto;
+        }
+        .block { height: 480px; display: inline-block; }
+        .block-1 { background-color: red; width: 700px;}
+        .block-2 { background-color: aqua; width: 200px}
+        .block-3 { background-color: aquamarine; width: 200px;}
+        .block-4 { width: 1280px; background-color: black; height: 40px; color: white; text-align: center;}
+        .block-5 { width: 1280px; background-color: blue; height: 1800px;}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <span>Hello, World</span>
+        <div>
+            <div class="block block-1">Block 1</div>
+            <div class="block block-2">Block 2</div>
+            <div class="block block-3">Block 3</div>
+            <div>
+                <div style="width: 1280px; height: 40px;">
+                    <div class="block block-4">Floating Dock Bar</div>
+                </div>
+                <div>
+                    <div class="block block-5">Baseline) Very Big Size Some Contents</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var floatingDockBar = new FloatingDockBar({
+        dockBar: $('.block-4'),
+        baseline: $('.block-5'),
+        activeCss: {
+            "position": "fixed",
+            "top": "0",
+            "width": "1280px",
+            "z-index": "1",
+            "background-color": "black",
+            "color": "white",
+            "text-align": "center"
+        },
+        inActiveCss: {
+            "position": "relative",
+            "top": "auto",
+            "z-index": "0"
+        },
+    });
+    floatingDockBar.init();
+</script>
+</html>
